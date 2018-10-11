@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.vecmath.Point3f;
 
-public class StatusPane extends JPanel {
+public class StatusPane extends JPanel  {
 	public 	Point3f mouse3DCoords = new Point3f();
 	public void paintComponent(Graphics g) {
 		String status;

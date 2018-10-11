@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.vecmath.Point3f;
-public class LimbzApp extends JFrame implements MouseListener {
+public class LimbzApp extends JFrame  {
 	/**
 	 * 
 	 */
 	ArrayList<Point3f> points = new ArrayList<Point3f>() ;
-
+	public Point m_pt;
 	float module = 22.5f/3.5f;
 	public int getPane(Point pt) {
 		String status;
@@ -41,46 +41,20 @@ public class LimbzApp extends JFrame implements MouseListener {
 	
 	JPanel pane = new JPanel();
 	StatusPane paneStatus = new StatusPane();
-	ViewPaneXY paneYX = new ViewPaneXY();
+	ViewPaneXY paneXY = new ViewPaneXY(this);
+	
 	ViewPaneZY paneZY = new ViewPaneZY();
 	ViewPaneXZ paneXZ = new ViewPaneXZ();
 
 	private static final long serialVersionUID = 1L;
-	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		PointerInfo a=MouseInfo.getPointerInfo();
-		Point pt = a.getLocation();
-		
-		
-	}
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	public LimbzApp() {
 		super("Limbz");
 		setSize(1600,960);
 
 		GridLayout family =new GridLayout(2,2);
 		pane.setLayout(family);
-		pane.add(paneYX);
+		pane.add(paneXY);
 		pane.add(paneZY);
 		pane.add(paneXZ);
 		pane.add(paneStatus);
@@ -94,4 +68,5 @@ public class LimbzApp extends JFrame implements MouseListener {
 		appFrame.show();
 		appFrame.setResizable(false);
 	}
+
 }
