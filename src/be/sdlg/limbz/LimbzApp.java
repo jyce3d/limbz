@@ -16,16 +16,20 @@ public class LimbzApp extends JFrame  {
 	 * 
 	 */
 	ArrayList<Point3f> points = new ArrayList<Point3f>() ;
-	public Point m_pt;
+	
+	
+	public Point3f m_pt3d;
 	float module = 22.5f/3.5f;
-	public int getPane(Point pt) {
+	
+	public float step = 8; // pixel
+
+	/*public int getPane(Point pt) {
 		String status;
 		if ((pt.getX() <=444) && (pt.getY()<=398)) {
 			paneStatus.mouse3DCoords.y=(float)pt.getY() * 22.5f/398f;
 			paneStatus.mouse3DCoords.x = (float) pt.getX() * 16.07f/444f;
 			paneStatus.invalidate();
 			paneStatus.repaint();
-			
 			return PANEXY;
 		} else if ((pt.getX() <=444) && (pt.getY()>=398)) {
 			return PANEXZ;
@@ -34,7 +38,9 @@ public class LimbzApp extends JFrame  {
 		}
 		else return 0;
 		
-	}
+	}*/
+	ArrayList<TriFace> triFaces = new ArrayList<TriFace>();
+	
 	public static final int PANEXY =1;
 	public static final int PANEYZ =2;
 	public static final int PANEXZ =3;
@@ -43,11 +49,15 @@ public class LimbzApp extends JFrame  {
 	StatusPane paneStatus = new StatusPane();
 	ViewPaneXY paneXY = new ViewPaneXY(this);
 	
-	ViewPaneZY paneZY = new ViewPaneZY();
-	ViewPaneXZ paneXZ = new ViewPaneXZ();
+	ViewPaneZY paneZY = new ViewPaneZY(this);
+	ViewPaneXZ paneXZ = new ViewPaneXZ(this);
 
 	private static final long serialVersionUID = 1L;
-	
+	public void refreshAll(){
+		paneXY.refresh();
+		paneZY.refresh();
+		paneXZ.refresh();
+	}
 	public LimbzApp() {
 		super("Limbz");
 		setSize(1600,960);
