@@ -1,0 +1,15 @@
+Limbz permet de générer des petits objets 3D via une interface simple.
+
+Limbz dispose de plusieurs états de dessin:
+l 			permet de forcer la direction de construction vers la gauche
+r			permet de forcer la direction de construction vers la droite
+u			permet de forcer la direction de construction vers le haut
+d			permet de forcer la direction de construction vers le bas
+v			permet de définir un vecteur de direction
+
+s 			passe en mode sélection.
+			+			selectionne le point suivante du quad/tri		
+			t			Dessinne un triangle à partir de l'élément sélectionné Triangle (permet de dessiner un triangle), la direction de construction est déterminée par le status
+			de direction voir (l,r,u et d)
+			q 			permet de dessiner des quads à partir de l'élément sélectionné en suivant les directions précédentes.
+				
