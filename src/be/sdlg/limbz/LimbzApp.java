@@ -45,6 +45,8 @@ public class LimbzApp extends JFrame  {
 	public static final int PANEYZ =2;
 	public static final int PANEXZ =3;
 	
+	public Point m_pt = null;
+
 	JPanel pane = new JPanel();
 	StatusPane paneStatus = new StatusPane();
 	ViewPaneXY paneXY = new ViewPaneXY(this);

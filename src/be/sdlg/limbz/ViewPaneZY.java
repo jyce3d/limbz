@@ -15,7 +15,6 @@ import javax.vecmath.Point3f;
 
 public class ViewPaneZY extends JPanel implements MouseListener {
 	private LimbzApp m_parent = null;
-	public Point m_pt = null;
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 =(Graphics2D) g;
 		g2.setPaint(Color.BLUE);		
@@ -25,8 +24,8 @@ public class ViewPaneZY extends JPanel implements MouseListener {
 		g2.drawString("Y", 398+4, 8);
 		g2.drawString("Z", 788, 222);
 		g2.drawLine(0, 222, 796,222);
-		if (m_pt !=null ) {
-			g2.drawString("Pos (Z,Y)=(" + Double.toString(m_pt.getX()) +","+m_pt.getY()+")" , 8,16);
+		if (m_parent.m_pt !=null ) {
+			g2.drawString("Pos (Z,Y)=(" + Double.toString(m_parent.m_pt.getX()) +","+m_parent.m_pt.getY()+")" , 8,16);
 			displayLimbz(g);
 		}
 	}
@@ -38,14 +37,14 @@ public class ViewPaneZY extends JPanel implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		PointerInfo a=MouseInfo.getPointerInfo();
-		m_pt = a.getLocation();
+		m_parent.m_pt = a.getLocation();
 		
 		// Create triFace
 		Point3f cur=new Point3f();
 
 		
-		cur.z=(float) ((m_pt.getX()-(398+800)) * 11.25f/398f);
-		cur.y=(float) (((m_pt.getY()-222)-24) * 11.25f/222f);
+		cur.z=(float) ((m_parent.m_pt.getX()-(398+800)) * 11.25f/398f);
+		cur.y=(float) (((m_parent.m_pt.getY()-222)-24) * 11.25f/222f);
 		if (m_parent.m_pt3d !=null )
 				cur.x = m_parent.m_pt3d.x;
 		else
@@ -54,16 +53,16 @@ public class ViewPaneZY extends JPanel implements MouseListener {
 		m_parent.m_pt3d = cur;
 
 		Point3f cur2=new Point3f();
-		cur2.z=(float) ((m_pt.getX()-(398+800)) * 11.25f/398f);
-		cur2.y=(float) ((m_pt.getY()-222)-16) * 11.25f/222f;
+		cur2.z=(float) ((m_parent.m_pt.getX()-(398+800)) * 11.25f/398f);
+		cur2.y=(float) ((m_parent.m_pt.getY()-222)-16) * 11.25f/222f;
 		cur2.x = m_parent.m_pt3d.x;
 
 		m_parent.points.add(cur2);
 		m_parent.m_pt3d = cur2;
 
 		Point3f cur3=new Point3f();
-		cur3.z=(float) ((m_pt.getX()-(390+800)) * 11.25f/398f);
-		cur3.y=(float) ((m_pt.getY()-222)-24) * 11.25f/222f;
+		cur3.z=(float) ((m_parent.m_pt.getX()-(390+800)) * 11.25f/398f);
+		cur3.y=(float) ((m_parent.m_pt.getY()-222)-24) * 11.25f/222f;
 		cur3.x = m_parent.m_pt3d.x;
 
 		m_parent.points.add(cur3);
