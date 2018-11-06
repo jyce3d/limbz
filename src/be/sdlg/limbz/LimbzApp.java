@@ -45,7 +45,14 @@ public class LimbzApp extends JFrame  {
 	public static final int PANEYZ =2;
 	public static final int PANEXZ =3;
 	
+	public static final int STATUS_SELECTED = 0;
+	public static final int STATUS_TRI = 2;
+	public static final int STATUS_QUAD = 4;
+
 	public Point m_pt = null;
+	// Selection
+	public int m_status =0;
+	public TriFace m_selTriFace = null;
 
 	JPanel pane = new JPanel();
 	StatusPane paneStatus = new StatusPane();
