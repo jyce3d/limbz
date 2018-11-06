@@ -42,7 +42,7 @@ public class ViewPaneXZ extends JPanel implements MouseListener {
 			int x,y;
 			for (int i=0; i<3; i++) {
 				x=(int) ((cur.tf[i].x * 398f/11.25f)+398);
-				y=(int) ((cur.tf[i].z *222f/11.25f)+622);
+				y=(int) ((cur.tf[i].z *222f/11.25f)+222);
 				g2.setPaint(Color.YELLOW);
 				g2.drawOval(x-2, y-2, 4, 4);
 			}
@@ -86,6 +86,7 @@ public class ViewPaneXZ extends JPanel implements MouseListener {
 		
 	}
 	public void refresh() {
+		this.invalidate();
 		this.repaint();
 	}
 	@Override

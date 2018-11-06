@@ -79,6 +79,7 @@ public class ViewPaneXY extends JPanel implements MouseListener {
 
 	}
 	public void refresh() {
+		this.invalidate();
 		this.repaint();
 	}
 	public void displayLimbz(Graphics g) {
