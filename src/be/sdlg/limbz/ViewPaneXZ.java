@@ -68,7 +68,8 @@ public class ViewPaneXZ extends JPanel implements MouseListener {
 		// Create triFace		
 		Point3f cur=new Point3f();
 		cur.x=(float) ((m_parent.m_pt.getX()-398) * 11.25f/398f);
-		cur.z=(float) ((m_parent.m_pt.getY()-622)-24) * 11.25f/222f;
+		cur.z=(float) ((m_parent.m_pt.getY()-666)-24) * 11.25f/222f;
+		System.out.println("Z="+m_parent.m_pt.getY());
 		if (m_parent.m_pt3d !=null )
 				cur.y = m_parent.m_pt3d.y;
 		else
@@ -78,7 +79,7 @@ public class ViewPaneXZ extends JPanel implements MouseListener {
 
 		Point3f cur2=new Point3f();
 		cur2.x=(float) ((m_parent.m_pt.getX()-398) * 11.25f/398f);
-		cur2.z=(float) ((m_parent.m_pt.getY()-622)-16) * 11.25f/222f;
+		cur2.z=(float) ((m_parent.m_pt.getY()-666)-16) * 11.25f/222f;
 		cur2.y = m_parent.m_pt3d.y;
 
 		m_parent.points.add(cur2);
@@ -86,7 +87,7 @@ public class ViewPaneXZ extends JPanel implements MouseListener {
 
 		Point3f cur3=new Point3f();
 		cur3.x=(float) ((m_parent.m_pt.getX()-390) * 11.25f/398f);
-		cur3.z=(float) ((m_parent.m_pt.getY()-622)-24) * 11.25f/222f;
+		cur3.z=(float) ((m_parent.m_pt.getY()-666)-24) * 11.25f/222f;
 		cur3.y = m_parent.m_pt3d.y;
 
 		m_parent.points.add(cur3);
