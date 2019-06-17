@@ -8,8 +8,8 @@ d			permet de forcer la direction de construction vers le bas
 v			permet de définir un vecteur de direction
 
 s 			passe en mode sélection.
-			+			selectionne le point suivante du quad/tri		
+			+			selectionne le point suivante du quad/tri, sens horlogique		
 			t			Dessinne un triangle à partir de l'élément sélectionné Triangle (permet de dessiner un triangle), la direction de construction est déterminée par le status
 			de direction voir (l,r,u et d)
 			q 			permet de dessiner des quads à partir de l'élément sélectionné en suivant les directions précédentes.
-				
+p           revient en mode pen				
